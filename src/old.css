@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: white;
+  
+}
+.button {
+  background-color: white;
+  padding:0;
+  margin-left: 15px;
+  margin-top: 0;
+  margin-right: 15px;
+  margin-bottom: 0;
+  border: none;
+  color: rgb(255, 0, 0);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.button-decr {
+  background-color: #ff0000;
+}
+
+.button-incr {
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.grid-container {
+  background-color: white;
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 10% 5%;
+  grid-template-areas: 
+  'corner h1'
+  'major maj1'
+  'minor min1'
+  'misc mis1';
+  justify-content: start;
+}
+.grid-major {
+  grid-area: major;
+  color:green;
+}
+
+.grid-minor {
+  grid-area: minor;
+  color: yellow;
+}
+
+.grid-misc {
+  grid-area: misc;
+  color: orange;
+}
+
+.grid-h1 {
+  grid-area: h1;
+  color:white;
+}
+
+.grid-maj1 {
+  grid-area: maj1;
+  color:green;
+}
+
+.grid-min1 {
+  grid-area: min1;
+  color: yellow;
+}
+
+.grid-mis1 {
+  grid-area: mis1;
+}
+
+
+.grid-h2 {
+  grid-area: h2;
+  color:cyan;
+}
+
+.grid-maj2 {
+  grid-area: maj2;
+}
+
+.grid-min2 {
+  grid-area: min2;
+}
+
+.grid-mis2 {
+  grid-area: mis2;
+}
+
+.grid-corner {
+  grid-area: corner;
+}
+
+.grid-item {
+  background-color: white;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  padding: 5px;
+  font-size: 12px;
+  font-style: oblique;
+  text-align: center;
+}
+

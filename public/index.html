@@ -1,43 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<head>
+	<title>mw-planner</title>
+</head>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+<body>
+	<!-- <div id="root"></div> -->
+	<div class="dd">
+		<div class="dd-sex">
+			<label>Sex</label>
+			<br>
+			<select id="sex">
+				<option value=""></option>
+				<option value="male">Male</option>
+				<option value="female">Female</option>
+			</select>
+		</div>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+		<div class="dd-race">
+			<label>Race</label>
+			<br>
+			<select id="race">
+				<option value=""></option>
+				<option value="argonian">Argonian</option>
+				<option value="breton">Breton</option>
+				<option value="dark-elf">Dark Elf</option>
+				<option value="high-elf">High Elf</option>
+				<option value="imperial">Imperial</option>
+				<option value="khajiit">Khajiit</option>
+				<option value="nord">Nord</option>
+				<option value="orc">Orc</option>
+				<option value="redguard">Redguard</option>
+				<option value="wood-elf">Wood Elf</option>
+			</select>
+		</div>
+
+		<div class="dd-sign">
+			<label>Birthsign</label>
+			<br>
+			<select id="birthsign">
+				<option value=""></option>
+				<option value="apprentice">The Apprentice</option>
+				<option value="atronach">The Atronach</option>
+				<option value="lady">The Lady</option>
+				<option value="lord">The Lord</option>
+				<option value="lover">The Lover</option>
+				<option value="mage">The Mage</option>
+				<option value="ritual">The Ritual</option>
+				<option value="serpent">The Serpent</option>
+				<option value="steed">The Steed</option>
+				<option value="thief">The Thief</option>
+				<option value="tower">The Tower</option>
+				<option value="warrior">The Warrior</option>
+			</select>
+		</div>
+	
+		<div class="dd-spec">
+			<label>Specialization</label>
+			<br>
+			<select id="specialization">
+				<option value=""></option>
+				<option value="combat">Combat</option>
+				<option value="magic">Magic</option>
+				<option value="stealth">Stealth</option>
+			</select>
+		</div>
+	
+	
+
+
+
+
+	<div class="dd-fav1">
+		<label>Favored Attributes</label>
+		<br>
+		<select id="favored-attributes">
+			<option value=""></option>
+			<option value="strength">Strength</option>
+			<option value="intelligence">Intelligence</option>
+			<option value="willpower">Willpower</option>
+			<option value="agility">Agility</option>
+			<option value="speed">Speed</option>
+			<option value="endurance">Endurance</option>
+			<option value="personality">Personality</option>
+			<option value="luck">Luck</option>
+		</select>
+	</div>
+
+	<div class="dd-fav2">
+		<br>
+		<select id="favored-attributes">
+			<option value=""></option>
+			<option value="strength">Strength</option>
+			<option value="intelligence">Intelligence</option>
+			<option value="willpower">Willpower</option>
+			<option value="agility">Agility</option>
+			<option value="speed">Speed</option>
+			<option value="endurance">Endurance</option>
+			<option value="personality">Personality</option>
+			<option value="luck">Luck</option>
+		</select>
+	</div>
+	<div class="dd-maj">
+		<label>Major Skills</label>
+		<br>
+		<select></select>
+		<br>
+		<select></select>
+		<br>
+		<select></select>
+		<br>
+		<select></select>
+		<br>
+		<select></select>
+	</div>
+	<div class="dd-min">
+		<label>Minor Skills</label>
+		<br>
+		<select></select>
+		<br>
+		<select></select>
+		<br>
+		<select></select>
+		<br>
+		<select></select>
+		<br>
+		<select></select>
+	</div>
+
+	<!-- <select id="major-skill-1">
+		<option value=""></option>
+		<optgroup label="Combat">
+			<option value="armorer">Armorer</option>
+			<option value="athletics">Athletics</option>
+			<option value="axe">Axe</option>
+			<option value="block">Block</option>
+			<option value="blunt-weapon">Blunt Weapon</option>
+			<option value="heavy-armor">Heavy Armor</option>
+			<option value="long-blade">Long Blade</option>
+			<option value="medium-armor">Medium Armor</option>
+			<option value="spear">Spear</option>
+		</optgroup>
+		<optgroup label="Magic">
+			<option value="alchemy">Alchemy</option>
+			<option value="alteration">Alteration</option>
+			<option value="conjuration">Conjuration</option>
+			<option value="destruction">Destruction</option>
+			<option value="enchant">Enchant</option>
+			<option value="illusion">Illusion</option>
+			<option value="mysticism">Mysticism</option>
+			<option value="restoration">Restoration</option>
+			<option value="unarmored">Unarmored</option>
+		</optgroup>
+		<optgroup label="Stealth">
+			<option value="acrobatics">Acrobatics</option>
+			<option value="hand-to-hand">Hand to Hand</option>
+			<option value="light-armor">Light Armor</option>
+			<option value="marksman">Marksman</option>
+			<option value="mercantile">Mercantile</option>
+			<option value="security">Security</option>
+			<option value="short-blade">Short Blade</option>
+			<option value="sneak">Sneak</option>
+			<option value="speechcraft">Speechcraft</option>
+		</optgroup>
+	</select> -->
+</div>
+</body>
+
 </html>

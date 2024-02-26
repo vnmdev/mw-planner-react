@@ -1,13 +1,64 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    background-color: white;
+    color: black;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+select {
+  width : 150px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.dd {
+  background-color: white;
+  display: grid;
+  margin: 10px;
+  grid-template-columns: 10% 10%;
+  grid-template-areas: 
+  'sex fav1 '
+  'race fav2'
+  'sign spec'
+  'maj min';
+  justify-content: start;
+}
+
+.dd-sex {
+  grid-area: sex;
+}
+
+.dd-race {
+  grid-area: race;
+}
+
+.dd-sign {
+  grid-area: sign;
+}
+
+.dd-spec {
+  grid-area: spec;
+}
+
+.dd-fav1 {
+  grid-area: fav1;
+}
+
+.dd-fav2 {
+  grid-area: fav2;
+}
+
+.dd-maj {
+  grid-area: maj;
+}
+
+.dd-min {
+  grid-area: min;
 }
