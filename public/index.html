@@ -2,170 +2,72 @@
 <html lang="en">
 
 <head>
-	<title>mw-planner</title>
+  <title>mw-planner</title>
+
+  <script>
+    function calculateLevels() {
+      
+      var choices = new Map()
+      var dropdownIds = [
+        'sex',
+        'race',
+        'birthsign',
+        'specialization',
+        'favored-attributes',
+        'favored-attributes2',
+        'major-skill-1',
+        'major-skill-2',
+        'major-skill-3',
+        'major-skill-4',
+        'major-skill-5',
+        'minor-skill-1',
+        'minor-skill-2',
+        'minor-skill-3',
+        'minor-skill-4',
+        'minor-skill-5',
+      ]
+
+      dropdownIds.forEach((id) => {
+        choices.set(id, document.getElementById(id).value)
+      })
+
+      var character = {
+        sex: choices.get('sex'),
+        race: choices.get('race'),
+        birthsign: choices.get('birthsign'),
+        attribute1: choices.get('favored-attributes'),
+        attribute2: choices.get('favored-attributes2'),
+        specialization: choices.get('specialization'),
+
+        major: [
+          choices.get('major-skill-1'),
+          choices.get('major-skill-2'),
+          choices.get('major-skill-3'),
+          choices.get('major-skill-4'),
+          choices.get('major-skill-5'),
+        ],
+        minor: [
+          choices.get('minor-skill-1'),
+          choices.get('minor-skill-2'),
+          choices.get('minor-skill-3'),
+          choices.get('minor-skill-4'),
+          choices.get('minor-skill-5'),
+        ],
+      }
+      var charSkills = new Map(character.skills)
+      var raceSkills = new Map(raceData[character.race].skills)
+      raceSkills.forEach((v, k) => {
+        charSkills.set(k, raceSkills.get(k) + v)
+      })
+      console.log(charSkills)
+    }
+  </script>
 </head>
 
 <body>
-	<!-- <div id="root"></div> -->
-	<div class="dd">
-		<div class="dd-sex">
-			<label>Sex</label>
-			<br>
-			<select id="sex">
-				<option value=""></option>
-				<option value="male">Male</option>
-				<option value="female">Female</option>
-			</select>
-		</div>
+  <div id="root"></div>
+  <!-- <button onclick='calculateLevels()'>Create</button> -->
 
-		<div class="dd-race">
-			<label>Race</label>
-			<br>
-			<select id="race">
-				<option value=""></option>
-				<option value="argonian">Argonian</option>
-				<option value="breton">Breton</option>
-				<option value="dark-elf">Dark Elf</option>
-				<option value="high-elf">High Elf</option>
-				<option value="imperial">Imperial</option>
-				<option value="khajiit">Khajiit</option>
-				<option value="nord">Nord</option>
-				<option value="orc">Orc</option>
-				<option value="redguard">Redguard</option>
-				<option value="wood-elf">Wood Elf</option>
-			</select>
-		</div>
-
-		<div class="dd-sign">
-			<label>Birthsign</label>
-			<br>
-			<select id="birthsign">
-				<option value=""></option>
-				<option value="apprentice">The Apprentice</option>
-				<option value="atronach">The Atronach</option>
-				<option value="lady">The Lady</option>
-				<option value="lord">The Lord</option>
-				<option value="lover">The Lover</option>
-				<option value="mage">The Mage</option>
-				<option value="ritual">The Ritual</option>
-				<option value="serpent">The Serpent</option>
-				<option value="steed">The Steed</option>
-				<option value="thief">The Thief</option>
-				<option value="tower">The Tower</option>
-				<option value="warrior">The Warrior</option>
-			</select>
-		</div>
-	
-		<div class="dd-spec">
-			<label>Specialization</label>
-			<br>
-			<select id="specialization">
-				<option value=""></option>
-				<option value="combat">Combat</option>
-				<option value="magic">Magic</option>
-				<option value="stealth">Stealth</option>
-			</select>
-		</div>
-	
-	
-
-
-
-
-	<div class="dd-fav1">
-		<label>Favored Attributes</label>
-		<br>
-		<select id="favored-attributes">
-			<option value=""></option>
-			<option value="strength">Strength</option>
-			<option value="intelligence">Intelligence</option>
-			<option value="willpower">Willpower</option>
-			<option value="agility">Agility</option>
-			<option value="speed">Speed</option>
-			<option value="endurance">Endurance</option>
-			<option value="personality">Personality</option>
-			<option value="luck">Luck</option>
-		</select>
-	</div>
-
-	<div class="dd-fav2">
-		<br>
-		<select id="favored-attributes">
-			<option value=""></option>
-			<option value="strength">Strength</option>
-			<option value="intelligence">Intelligence</option>
-			<option value="willpower">Willpower</option>
-			<option value="agility">Agility</option>
-			<option value="speed">Speed</option>
-			<option value="endurance">Endurance</option>
-			<option value="personality">Personality</option>
-			<option value="luck">Luck</option>
-		</select>
-	</div>
-	<div class="dd-maj">
-		<label>Major Skills</label>
-		<br>
-		<select></select>
-		<br>
-		<select></select>
-		<br>
-		<select></select>
-		<br>
-		<select></select>
-		<br>
-		<select></select>
-	</div>
-	<div class="dd-min">
-		<label>Minor Skills</label>
-		<br>
-		<select></select>
-		<br>
-		<select></select>
-		<br>
-		<select></select>
-		<br>
-		<select></select>
-		<br>
-		<select></select>
-	</div>
-
-	<!-- <select id="major-skill-1">
-		<option value=""></option>
-		<optgroup label="Combat">
-			<option value="armorer">Armorer</option>
-			<option value="athletics">Athletics</option>
-			<option value="axe">Axe</option>
-			<option value="block">Block</option>
-			<option value="blunt-weapon">Blunt Weapon</option>
-			<option value="heavy-armor">Heavy Armor</option>
-			<option value="long-blade">Long Blade</option>
-			<option value="medium-armor">Medium Armor</option>
-			<option value="spear">Spear</option>
-		</optgroup>
-		<optgroup label="Magic">
-			<option value="alchemy">Alchemy</option>
-			<option value="alteration">Alteration</option>
-			<option value="conjuration">Conjuration</option>
-			<option value="destruction">Destruction</option>
-			<option value="enchant">Enchant</option>
-			<option value="illusion">Illusion</option>
-			<option value="mysticism">Mysticism</option>
-			<option value="restoration">Restoration</option>
-			<option value="unarmored">Unarmored</option>
-		</optgroup>
-		<optgroup label="Stealth">
-			<option value="acrobatics">Acrobatics</option>
-			<option value="hand-to-hand">Hand to Hand</option>
-			<option value="light-armor">Light Armor</option>
-			<option value="marksman">Marksman</option>
-			<option value="mercantile">Mercantile</option>
-			<option value="security">Security</option>
-			<option value="short-blade">Short Blade</option>
-			<option value="sneak">Sneak</option>
-			<option value="speechcraft">Speechcraft</option>
-		</optgroup>
-	</select> -->
-</div>
 </body>
 
 </html>

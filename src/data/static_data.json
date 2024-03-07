@@ -1,0 +1,811 @@
+{
+  "BaseCharacter": {
+    "Skills": {
+      "Acrobatics": 5,
+      "Alchemy": 5,
+      "Alteration": 5,
+      "Armorer": 5,
+      "Athletics": 5,
+      "Axe": 5,
+      "Block": 5,
+      "Blunt Weapon": 5,
+      "Conjuration": 5,
+      "Destruction": 5,
+      "Enchant": 5,
+      "Hand-to-hand": 5,
+      "Heavy Armor": 5,
+      "Illusion": 5,
+      "Light Armor": 5,
+      "Long Blade": 5,
+      "Marksman": 5,
+      "Medium Armor": 5,
+      "Mercantile": 5,
+      "Mysticism": 5,
+      "Restoration": 5,
+      "Security": 5,
+      "Short Blade": 5,
+      "Sneak": 5,
+      "Spear": 5,
+      "Speechcraft": 5,
+      "Unarmored": 5
+    },
+    "Attributes": {
+      "Strength": 40,
+      "Intelligence": 40,
+      "Willpower": 40,
+      "Agility": 40,
+      "Speed": 40,
+      "Endurance": 40,
+      "Personality": 40,
+      "Luck": 40
+    }
+  },
+  "SkillCategories": {
+    "Combat": [
+      "Armorer",
+      "Athletics",
+      "Axe",
+      "Block",
+      "Blunt Weapon",
+      "Heavy Armor",
+      "Long Blade",
+      "Medium Armor",
+      "Spear"
+    ],
+    "Magic": [
+      "Alchemy",
+      "Alteration",
+      "Conjuration",
+      "Destruction",
+      "Enchant",
+      "Illusion",
+      "Mysticism",
+      "Restoration",
+      "Unarmored"
+    ],
+    "Stealth": [
+      "Acrobatics",
+      "Hand-to-hand",
+      "Light Armor",
+      "Marksman",
+      "Mercantile",
+      "Security",
+      "Short Blade",
+      "Sneak",
+      "Speechcraft"
+    ]
+  },
+  "DefaultClasses": {
+    "Acrobat": {
+      "Major": [
+        "Acrobatics",
+        "Athletics",
+        "Marksman",
+        "Sneak",
+        "Unarmored"
+      ],
+      "Minor": [
+        "Speechcraft",
+        "Alteration",
+        "Spear",
+        "Hand-to-hand",
+        "Light Armor"
+      ],
+      "FavoredAttributes": [
+        "Agility",
+        "Endurance"
+      ],
+      "Specialization": "Stealth"
+    },
+    "Agent": {
+      "Major": [
+        "Speechcraft",
+        "Sneak",
+        "Acrobatics",
+        "Light Armor",
+        "Short Blade"
+      ],
+      "Minor": [
+        "Mercantile",
+        "Conjuration",
+        "Block",
+        "Unarmored",
+        "Illusion"
+      ],
+      "FavoredAttributes": [
+        "Personality",
+        "Agility"
+      ],
+      "Specialization": "Stealth"
+    },
+    "Archer": {
+      "Major": [
+        "Marksman",
+        "Long Blade",
+        "Block",
+        "Athletics",
+        "Light Armor"
+      ],
+      "Minor": [
+        "Unarmored",
+        "Spear",
+        "Restoration",
+        "Sneak",
+        "Medium Armor"
+      ],
+      "FavoredAttributes": [
+        "Agility",
+        "Strength"
+      ],
+      "Specialization": "Combat"
+    },
+    "Assassin": {
+      "Major": [
+        "Sneak",
+        "Marksman",
+        "Light Armor",
+        "Short Blade",
+        "Acrobatics"
+      ],
+      "Minor": [
+        "Security",
+        "Long Blade",
+        "Alchemy",
+        "Block",
+        "Athletics"
+      ],
+      "FavoredAttributes": [
+        "Speed",
+        "Intelligence"
+      ],
+      "Specialization": "Stealth"
+    },
+    "Barbarian": {
+      "Major": [
+        "Axe",
+        "Medium Armor",
+        "Blunt Weapon",
+        "Athletics",
+        "Block"
+      ],
+      "Minor": [
+        "Acrobatics",
+        "Light Armor",
+        "Armorer",
+        "Marksman",
+        "Unarmored"
+      ],
+      "FavoredAttributes": [
+        "Strength",
+        "Speed"
+      ],
+      "Specialization": "Combat"
+    },
+    "Bard": {
+      "Major": [
+        "Speechcraft",
+        "Alchemy",
+        "Acrobatics",
+        "Long Blade",
+        "Security"
+      ],
+      "Minor": [
+        "Mercantile",
+        "Illusion",
+        "Medium Armor",
+        "Enchant",
+        "Security"
+      ],
+      "FavoredAttributes": [
+        "Personality",
+        "Intelligence"
+      ],
+      "Specialization": "Stealth"
+    },
+    "Battlemage": {
+      "Major": [
+        "Alteration",
+        "Destruction",
+        "Conjuration",
+        "Axe",
+        "Heavy Armor"
+      ],
+      "Minor": [
+        "Mysticism",
+        "Long Blade",
+        "Marksman",
+        "Enchant",
+        "Alchemy"
+      ],
+      "FavoredAttributes": [
+        "Intelligence",
+        "Strength"
+      ],
+      "Specialization": "Magic"
+    },
+    "Crusader": {
+      "Major": [
+        "Blunt Weapon",
+        "Long Blade",
+        "Destruction",
+        "Heavy Armor",
+        "Block"
+      ],
+      "Minor": [
+        "Restoration",
+        "Armorer",
+        "Hand-to-hand",
+        "Medium Armor",
+        "Alchemy"
+      ],
+      "FavoredAttributes": [
+        "Agility",
+        "Strength"
+      ],
+      "Specialization": "Combat"
+    },
+    "Healer": {
+      "Major": [
+        "Restoration",
+        "Mysticism",
+        "Alteration",
+        "Hand-to-hand",
+        "Speechcraft"
+      ],
+      "Minor": [
+        "Illusion",
+        "Alchemy",
+        "Unarmored",
+        "Light Armor",
+        "Blunt Weapon"
+      ],
+      "FavoredAttributes": [
+        "Willpower",
+        "Personality"
+      ],
+      "Specialization": "Magic"
+    },
+    "Knight": {
+      "Major": [
+        "Long Blade",
+        "Axe",
+        "Speechcraft",
+        "Heavy Armor",
+        "Block"
+      ],
+      "Minor": [
+        "Restoration",
+        "Mercantile",
+        "Medium Armor",
+        "Enchant",
+        "Armorer"
+      ],
+      "FavoredAttributes": [
+        "Strength",
+        "Personality"
+      ],
+      "Specialization": "Combat"
+    },
+    "Mage": {
+      "Major": [
+        "Mysticism",
+        "Destruction",
+        "Alteration",
+        "Illusion",
+        "Restoration"
+      ],
+      "Minor": [
+        "Enchant",
+        "Alchemy",
+        "Unarmored",
+        "Short Blade",
+        "Conjuration"
+      ],
+      "FavoredAttributes": [
+        "Intelligence",
+        "Willpower"
+      ],
+      "Specialization": "Magic"
+    },
+    "Monk": {
+      "Major": [
+        "Hand-to-hand",
+        "Unarmored",
+        "Athletics",
+        "Acrobatics",
+        "Sneak"
+      ],
+      "Minor": [
+        "Block",
+        "Marksman",
+        "Light Armor",
+        "Restoration",
+        "Blunt Weapon"
+      ],
+      "FavoredAttributes": [
+        "Agility",
+        "Willpower"
+      ],
+      "Specialization": "Stealth"
+    },
+    "Nightblade": {
+      "Major": [
+        "Mysticism",
+        "Illusion",
+        "Alteration",
+        "Sneak",
+        "Short Blade"
+      ],
+      "Minor": [
+        "Light Armor",
+        "Unarmored",
+        "Destruction",
+        "Marksman",
+        "Security"
+      ],
+      "FavoredAttributes": [
+        "Willpower",
+        "Speed"
+      ],
+      "Specialization": "Magic"
+    },
+    "Pilgrim": {
+      "Major": [
+        "Speechcraft",
+        "Mercantile",
+        "Marksman",
+        "Restoration",
+        "Medium Armor"
+      ],
+      "Minor": [
+        "Illusion",
+        "Hand-to-hand",
+        "Short Blade",
+        "Block",
+        "Alchemy"
+      ],
+      "FavoredAttributes": [
+        "Personality",
+        "Endurance"
+      ],
+      "Specialization": "Stealth"
+    },
+    "Rogue": {
+      "Major": [
+        "Short Blade",
+        "Mercantile",
+        "Axe",
+        "Light Armor",
+        "Hand-to-hand"
+      ],
+      "Minor": [
+        "Block",
+        "Medium Armor",
+        "Speechcraft",
+        "Athletics",
+        "Long Blade"
+      ],
+      "FavoredAttributes": [
+        "Speed",
+        "Personality"
+      ],
+      "Specialization": "Combat"
+    },
+    "Scout": {
+      "Major": [
+        "Sneak",
+        "Long Blade",
+        "Medium Armor",
+        "Athletics",
+        "Block"
+      ],
+      "Minor": [
+        "Marksman",
+        "Alchemy",
+        "Alteration",
+        "Light Armor",
+        "Unarmored"
+      ],
+      "FavoredAttributes": [
+        "Speed",
+        "Endurance"
+      ],
+      "Specialization": "Combat"
+    },
+    "Sorcerer": {
+      "Major": [
+        "Enchant",
+        "Conjuration",
+        "Mysticism",
+        "Destruction",
+        "Alteration"
+      ],
+      "Minor": [
+        "Illusion",
+        "Medium Armor",
+        "Heavy Armor",
+        "Marksman",
+        "Short Blade"
+      ],
+      "FavoredAttributes": [
+        "Intelligence",
+        "Endurance"
+      ],
+      "Specialization": "Magic"
+    },
+    "Spellsword": {
+      "Major": [
+        "Block",
+        "Restoration",
+        "Long Blade",
+        "Destruction",
+        "Alteration"
+      ],
+      "Minor": [
+        "Blunt Weapon",
+        "Enchant",
+        "Alchemy",
+        "Medium Armor",
+        "Axe"
+      ],
+      "FavoredAttributes": [
+        "Willpower",
+        "Endurance"
+      ],
+      "Specialization": "Magic"
+    },
+    "Thief": {
+      "Major": [
+        "Security",
+        "Sneak",
+        "Acrobatics",
+        "Light Armor",
+        "Short Blade"
+      ],
+      "Minor": [
+        "Marksman",
+        "Speechcraft",
+        "Hand-to-hand",
+        "Mercantile",
+        "Athletics"
+      ],
+      "FavoredAttributes": [
+        "Speed",
+        "Agility"
+      ],
+      "Specialization": "Stealth"
+    },
+    "Warrior": {
+      "Major": [
+        "Long Blade",
+        "Medium Armor",
+        "Heavy Armor",
+        "Athletics",
+        "Block"
+      ],
+      "Minor": [
+        "Armorer",
+        "Spear",
+        "Marksman",
+        "Axe",
+        "Blunt Weapon"
+      ],
+      "FavoredAttributes": [
+        "Strength",
+        "Endurance"
+      ],
+      "Specialization": "Combat"
+    },
+    "Witchhunter": {
+      "Major": [
+        "Conjuration",
+        "Enchant",
+        "Alchemy",
+        "Light Armor",
+        "Marksman"
+      ],
+      "Minor": [
+        "Unarmored",
+        "Block",
+        "Blunt Weapon",
+        "Sneak",
+        "Mysticism"
+      ],
+      "FavoredAttributes": [
+        "Intelligence",
+        "Agility"
+      ],
+      "Specialization": "Magic"
+    }
+  },
+  "GoverningAttributes": {
+    "Acrobatics": "Strength",
+    "Alchemy": "Intelligence",
+    "Alteration": "Willpower",
+    "Armorer": "Strength",
+    "Athletics": "Speed",
+    "Axe": "Strength",
+    "Block": "Agility",
+    "Blunt Weapon": "Strength",
+    "Conjuration": "Intelligence",
+    "Destruction": "Willpower",
+    "Enchant": "Intelligence",
+    "Hand-to-hand": "Speed",
+    "Heavy Armor": "Endurance",
+    "Illusion": "Personality",
+    "Light Armor": "Agility",
+    "Long Blade": "Strength",
+    "Marksman": "Agility",
+    "Medium Armor": "Endurance",
+    "Mercantile": "Personality",
+    "Mysticism": "Willpower",
+    "Restoration": "Willpower",
+    "Security": "Intelligence",
+    "Short Blade": "Speed",
+    "Sneak": "Agility",
+    "Spear": "Endurance",
+    "Speechcraft": "Personality",
+    "Unarmored": "Speed"
+  },
+  "RacialBonuses": {
+    "Argonian": {
+      "Attributes": {
+        "Male": {
+          "Willpower": -10,
+          "Agility": 10,
+          "Speed": 10,
+          "Endurance": -10,
+          "Personality": -10
+        },
+        "Female": {
+          "Intelligence": 10,
+          "Endurance": -10,
+          "Personality": -10
+        }
+      },
+      "Skills": {
+        "Alchemy": 5,
+        "Athletics": 15,
+        "Illusion": 5,
+        "Medium Armor": 5,
+        "Mysticism": 5,
+        "Spear": 5,
+        "Unarmored": 5
+      }
+    },
+    "Breton": {
+      "Attributes": {
+        "Male": {
+          "Intelligence": 10,
+          "Willpower": 10,
+          "Agility": -10,
+          "Speed": -10,
+          "Endurance": -10
+        },
+        "Female": {
+          "Strength": -10,
+          "Intelligence": 10,
+          "Willpower": 10,
+          "Agility": -10,
+          "Endurance": -10
+        }
+      },
+      "Skills": {
+        "Alchemy": 5,
+        "Alteration": 5,
+        "Conjuration": 10,
+        "Illusion": 5,
+        "Mysticism": 10,
+        "Restoration": 10
+      }
+    },
+    "Dark Elf": {
+      "Attributes": {
+        "Male": {
+          "Willpower": -10,
+          "Speed": 10,
+          "Personality": -10
+        },
+        "Female": {
+          "Willpower": -10,
+          "Speed": 10,
+          "Endurance": -10
+        }
+      },
+      "Skills": {
+        "Athletics": 5,
+        "Destruction": 10,
+        "Light Armor": 5,
+        "Long Blade": 5,
+        "Marksman": 5,
+        "Mysticism": 5,
+        "Short Blade": 10
+      }
+    },
+    "High Elf": {
+      "Attributes": {
+        "Male": {
+          "Strength": -10,
+          "Intelligence": 10,
+          "Speed": -10
+        },
+        "Female": {
+          "Strength": -10,
+          "Intelligence": 10,
+          "Personality": -10
+        }
+      },
+      "Skills": {
+        "Alchemy": 10,
+        "Alteration": 5,
+        "Conjuration": 5,
+        "Destruction": 10,
+        "Enchant": 10,
+        "Illusion": 5
+      }
+    },
+    "Imperial": {
+      "Attributes": {
+        "Male": {
+          "Willpower": -10,
+          "Agility": -10,
+          "Personality": 10
+        },
+        "Female": {
+          "Agility": -10,
+          "Speed": -10,
+          "Personality": 10
+        }
+      },
+      "Skills": {
+        "Blunt Weapon": 5,
+        "Hand-to-hand": 5,
+        "Light Armor": 5,
+        "Long Blade": 10,
+        "Mercantile": 10,
+        "Speechcraft": 10
+      }
+    },
+    "Khajiit": {
+      "Attributes": {
+        "Male": {
+          "Willpower": -10,
+          "Agility": 10,
+          "Endurance": -10
+        },
+        "Female": {
+          "Strength": -10,
+          "Willpower": -10,
+          "Agility": 10
+        }
+      },
+      "Skills": {
+        "Acrobatics": 15,
+        "Athletics": 5,
+        "Hand-to-hand": 5,
+        "Light Armor": 5,
+        "Security": 5,
+        "Short Blade": 5,
+        "Sneak": 5
+      }
+    },
+    "Nord": {
+      "Attributes": {
+        "Male": {
+          "Strength": 10,
+          "Intelligence": -10,
+          "Agility": -10,
+          "Endurance": 10,
+          "Personality": -10
+        },
+        "Female": {
+          "Strength": 10,
+          "Intelligence": -10,
+          "Willpower": 10,
+          "Agility": -10,
+          "Personality": -10
+        }
+      },
+      "Skills": {
+        "Axe": 10,
+        "Blunt Weapon": 10,
+        "Heavy Armor": 5,
+        "Long Blade": 5,
+        "Medium Armor": 10,
+        "Spear": 5
+      }
+    },
+    "Orc": {
+      "Attributes": {
+        "Male": {
+          "Strength": 5,
+          "Intelligence": -10,
+          "Willpower": 10,
+          "Agility": -5,
+          "Speed": -10,
+          "Endurance": 10,
+          "Personality": -10
+        },
+        "Female": {
+          "Strength": 5,
+          "Willpower": 5,
+          "Agility": -5,
+          "Speed": -10,
+          "Endurance": 10,
+          "Personality": -15
+        }
+      },
+      "Skills": {
+        "Armorer": 10,
+        "Axe": 5,
+        "Block": 10,
+        "Heavy Armor": 10,
+        "Medium Armor": 10
+      }
+    },
+    "Redguard": {
+      "Attributes": {
+        "Male": {
+          "Strength": 10,
+          "Intelligence": -10,
+          "Willpower": -10,
+          "Endurance": 10,
+          "Personality": -10
+        },
+        "Female": {
+          "Intelligence": -10,
+          "Willpower": -10,
+          "Endurance": 10
+        }
+      },
+      "Skills": {
+        "Athletics": 5,
+        "Axe": 5,
+        "Blunt Weapon": 5,
+        "Heavy Armor": 5,
+        "Long Blade": 15,
+        "Medium Armor": 5,
+        "Short Blade": 5
+      }
+    },
+    "Wood Elf": {
+      "Attributes": {
+        "Male": {
+          "Strength": -10,
+          "Willpower": -10,
+          "Agility": 10,
+          "Speed": 10,
+          "Endurance": -10
+        },
+        "Female": {
+          "Strength": -10,
+          "Willpower": -10,
+          "Agility": 10,
+          "Speed": 10,
+          "Endurance": -10
+        }
+      },
+      "Skills": {
+        "Acrobatics": 5,
+        "Alchemy": 5,
+        "Light Armor": 10,
+        "Marksman": 15,
+        "Sneak": 10
+      }
+    }
+  },
+  "Birthsigns": [
+    "The Apprentice",
+    "The Atronach",
+    "The Lady",
+    "The Lord",
+    "The Lover",
+    "The Mage",
+    "The Ritual",
+    "The Serpent",
+    "The Steed",
+    "The Thief",
+    "The Tower",
+    "The Warrior"
+  ]
+}
