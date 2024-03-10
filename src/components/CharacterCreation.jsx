@@ -16,12 +16,14 @@ const CharacterCreation = () => {
   //Final stats
   const [skills, setSkills] = useState(staticdata.BaseCharacter.Skills)
   const [attributes, setAttributes] = useState(staticdata.BaseCharacter.Attributes)
+  const [derivedAttributes, setDerivedAttributes] = useState(staticdata.DerivedAttributes)
 
 
   useEffect(() => {
     updateSkills()
     updateAttributes()
-  }, [race, sex, majorSkills, minorSkills, specialization, favoredAttributes, birthsign]);
+    updateDerivedAttributes()
+  }, [race, sex, majorSkills, minorSkills, specialization, favoredAttributes, birthsign, skills, attributes, derivedAttributes]);
 
   function updateSkills() {
     const baseSkills = Object.create(staticdata.BaseCharacter.Skills)
@@ -60,30 +62,33 @@ const CharacterCreation = () => {
       Object.entries(raceSexAttributes).forEach(([k, v]) => {
         baseAttributes[k] += v
       })
-    } 
+    }
 
     favoredAttributes.filter((x) => x != undefined).forEach((attribute) => {
       baseAttributes[attribute] += 10
     })
 
-    if (birthsign != '') {
-      switch(birthsign) {
-        case 'The Lady':
-          baseAttributes['Endurance'] += 25
-          baseAttributes['Personality'] += 25
-          break;
-        case 'The Steed':
-          baseAttributes['Speed'] += 25
-          break;
-        case 'The Lover':
-          baseAttributes['Agility'] += 25
-          break;
-      }
-    }
+    var birthsignAttributes = birthsign != '' && 'AttributeBonus' in staticdata.Birthsigns[birthsign] ? staticdata.Birthsigns[birthsign]['AttributeBonus'] : []
+
+    birthsignAttributes.forEach((attribute) => {
+      baseAttributes[attribute] += 25
+    })
 
     setAttributes(Object.create(baseAttributes))
   }
 
+  function updateDerivedAttributes() {
+    const baseDerivedAttributes = Object.create(staticdata.DerivedAttributes)
+    const racialMagickaMultiplier = race != '' && 'MagickaBonus' in staticdata.RacialBonuses[race] ? staticdata.RacialBonuses[race]['MagickaBonus'] : 0
+    const birthsignMagickaMultiplier = birthsign != '' && 'MagickaBonus' in staticdata.Birthsigns[birthsign] ? staticdata.Birthsigns[birthsign]['MagickaBonus'] : 0
+
+    baseDerivedAttributes['Health'] = (attributes['Strength'] + attributes['Endurance']) / 2
+    baseDerivedAttributes['Magicka'] = attributes['Intelligence'] * (1 + racialMagickaMultiplier + birthsignMagickaMultiplier)
+    baseDerivedAttributes['Fatigue'] = attributes['Strength'] + attributes['Willpower'] + attributes['Agility'] + attributes['Endurance']
+    baseDerivedAttributes['Encumbrance'] = attributes['Strength'] * 5
+
+    setDerivedAttributes(Object.create(baseDerivedAttributes))
+  }
   function updateArray(array, setArray, value, index) {
     if (!Array.isArray(array)) return
     setArray(array.map((c, i) => { return i === index ? value : c }));
@@ -163,16 +168,17 @@ const CharacterCreation = () => {
           onChange={(e) => setSpecialization(e.target.value)}
         />
         {drawRepeatedDropdowns()}
+        <CharacterStats
+          sex={sex}
+          race={race}
+          birthsign={birthsign}
+          specialization={specialization}
+          favoredAttributes={favoredAttributes}
+          skills={skills}
+          attributes={attributes}
+          derivedAttributes={derivedAttributes}
+        />
       </div>
-      <CharacterStats
-        sex={sex}
-        race={race}
-        birthsign={birthsign}
-        specialization={specialization}
-        favoredAttributes={favoredAttributes}
-        skills={skills}
-        attributes= {attributes}
-      />
 
     </>
   )

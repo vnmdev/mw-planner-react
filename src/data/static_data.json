@@ -597,7 +597,8 @@
         "Illusion": 5,
         "Mysticism": 10,
         "Restoration": 10
-      }
+      },
+      "MagickaBonus": 0.5
     },
     "Dark Elf": {
       "Attributes": {
@@ -642,7 +643,8 @@
         "Destruction": 10,
         "Enchant": 10,
         "Illusion": 5
-      }
+      },
+      "MagickaBonus": 1.5
     },
     "Imperial": {
       "Attributes": {
@@ -794,18 +796,43 @@
       }
     }
   },
-  "Birthsigns": [
-    "The Apprentice",
-    "The Atronach",
-    "The Lady",
-    "The Lord",
-    "The Lover",
-    "The Mage",
-    "The Ritual",
-    "The Serpent",
-    "The Steed",
-    "The Thief",
-    "The Tower",
-    "The Warrior"
-  ]
+  "Birthsigns": {
+    "The Apprentice": {
+      "MagickaBonus": 1.5
+    },
+    "The Atronach": {
+      "MagickaBonus": 2
+    },
+    "The Lady": {
+      "AttributeBonus": [
+        "Endurance",
+        "Personality"
+      ]
+    },
+    "The Lord": {},
+    "The Lover": {
+      "AttributeBonus": [
+        "Agility"
+      ]
+    },
+    "The Mage": {
+      "MagickaBonus": 0.5
+    },
+    "The Ritual": {},
+    "The Serpent": {},
+    "The Steed": {
+      "AttributeBonus": [
+        "Speed"
+      ]
+    },
+    "The Thief": {},
+    "The Tower": {},
+    "The Warrior": {}
+  },
+  "DerivedAttributes": {
+    "Health": 0,
+    "Magicka": 0,
+    "Fatigue": 0,
+    "Encumbrance": 0
+  }
 }

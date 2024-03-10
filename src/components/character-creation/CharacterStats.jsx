@@ -3,7 +3,7 @@ import staticdata from '../../data/static_data.json'
 
 const CharacterStats = (props) => {
 
-  const displayCharacterSkills = (skills) => {
+  const displaySkills = (skills) => {
     var result = []
     Object.keys(staticdata.SkillCategories).forEach((category) => {
       var s = []
@@ -15,13 +15,20 @@ const CharacterStats = (props) => {
           </>
         )
       })
-      result.push(<><br></br>{category}<br></br><br></br>{s}</>)
+      result.push(
+        <>
+          <br></br>
+          <b>{category}</b>
+          <br></br>
+          {s}
+        </>
+      )
 
     })
     return (<>{result}</>)
   }
 
-  const displayCharacterAttributes = (attributes) => {
+  const displayAttributes = (attributes) => {
     var result = []
     Object.keys(staticdata.BaseCharacter.Attributes).forEach((attribute) => {
       result.push(
@@ -34,11 +41,26 @@ const CharacterStats = (props) => {
     return (<>{result}</>)
   }
 
+  const displayDerivedAttributes = (derivedAttributes) => {
+    var result = []
+    Object.keys(staticdata.DerivedAttributes).forEach((derivedAttribute) => {
+      result.push(
+        <>
+          {derivedAttribute + ': ' + derivedAttributes[derivedAttribute]}
+          <br></br>
+        </>
+      )
+    })
+    return (<>{result}</>)
+  }
+
   return (
     <>
-
-      {displayCharacterSkills(props.skills)}<br></br>
-      {displayCharacterAttributes(props.attributes)}
+      <div class="dd-Stats4">
+        {displaySkills(props.skills)}<br></br>
+        {displayAttributes(props.attributes)}<br></br>
+        {displayDerivedAttributes(props.derivedAttributes)}
+      </div>
     </>
   )
 }

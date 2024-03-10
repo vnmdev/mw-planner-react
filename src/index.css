@@ -5,7 +5,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  font-size: 8pt;
+  font-size: 10pt;
   font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -18,16 +18,20 @@ select {
   margin-bottom: 5px;
 }
 
+.stats {
+  float:right;
+}
+
 .dd {
   background-color: white;
   display: grid;
   margin: 10px;
   grid-template-columns: 10% 10%;
   grid-template-areas:
-    'Sex FavoredAttribute1'
-    'Race FavoredAttribute2'
-    'Birthsign Specialization'
-    'Major Minor';
+    'Sex FavoredAttribute1 Stats1'
+    'Race FavoredAttribute2 Stats2'
+    'Birthsign Specialization Stats3'
+    'Major Minor Stats4';
   justify-content: start;
 }
 
@@ -61,4 +65,20 @@ select {
 
 .dd-Minor {
   grid-area: Minor;
+}
+
+.dd-Stats1 {
+  grid-area: Stats1;
+}
+
+.dd-Stats2 {
+  grid-area: Stats2;
+}
+
+.dd-Stats3 {
+  grid-area: Stats3;
+}
+
+.dd-Stats4 {
+  grid-area: Stats4;
 }

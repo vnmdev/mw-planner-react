@@ -44,7 +44,7 @@ const Dropdown = (props) => {
 
   return (
     <>
-      {dropdownGenerator(props.name, props.values, null || props.skillCategories)}
+      {dropdownGenerator(props.name, props.values, props.skillCategories)}
     </>
   )
 }

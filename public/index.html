@@ -1,73 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <title>mw-planner</title>
-
-  <!-- <script>
-    function calculateLevels() {
-      
-      var choices = new Map()
-      var dropdownIds = [
-        'sex',
-        'race',
-        'birthsign',
-        'specialization',
-        'favored-attributes',
-        'favored-attributes2',
-        'major-skill-1',
-        'major-skill-2',
-        'major-skill-3',
-        'major-skill-4',
-        'major-skill-5',
-        'minor-skill-1',
-        'minor-skill-2',
-        'minor-skill-3',
-        'minor-skill-4',
-        'minor-skill-5',
-      ]
-
-      dropdownIds.forEach((id) => {
-        choices.set(id, document.getElementById(id).value)
-      })
-
-      var character = {
-        sex: choices.get('sex'),
-        race: choices.get('race'),
-        birthsign: choices.get('birthsign'),
-        attribute1: choices.get('favored-attributes'),
-        attribute2: choices.get('favored-attributes2'),
-        specialization: choices.get('specialization'),
-
-        major: [
-          choices.get('major-skill-1'),
-          choices.get('major-skill-2'),
-          choices.get('major-skill-3'),
-          choices.get('major-skill-4'),
-          choices.get('major-skill-5'),
-        ],
-        minor: [
-          choices.get('minor-skill-1'),
-          choices.get('minor-skill-2'),
-          choices.get('minor-skill-3'),
-          choices.get('minor-skill-4'),
-          choices.get('minor-skill-5'),
-        ],
-      }
-      var charSkills = new Map(character.skills)
-      var raceSkills = new Map(raceData[character.race].skills)
-      raceSkills.forEach((v, k) => {
-        charSkills.set(k, raceSkills.get(k) + v)
-      })
-      console.log(charSkills)
-    }
-  </script> -->
-</head>
-
-<body>
-  <div id="root"></div>
-  <!-- <button onclick='calculateLevels()'>Create</button> -->
-
-</body>
-
+  <head>
+    <title>mw-planner</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
