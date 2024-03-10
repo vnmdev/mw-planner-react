@@ -2,29 +2,22 @@ import { useEffect, useState } from 'react'
 import staticdata from '../../data/static_data.json'
 
 const CharacterStats = (props) => {
-  const character = Object.create(staticdata.BaseCharacter)
-  const [skills, setSkills] = useState(character.Skills)
-  const attributes = character.Attributes
 
-  const setCharacterSkills = (skills) => {
-    skills = Object.create(staticdata.BaseCharacter.Skills)
-    props.majorSkills.forEach((majorSkill) => {
-      console.log(majorSkill)
-      skills[majorSkill] = staticdata.BaseCharacter.Skills[majorSkill] + 30
-    })
-    return skills
-  }
-  
   const displayCharacterSkills = (skills) => {
     var result = []
-    for (var skill in skills) {
-      result.push(
-        <>
-          {skill + ': ' + skills[skill]}
-          <br></br>
-        </>
-      )
-    }
+    Object.keys(staticdata.SkillCategories).forEach((category) => {
+      var s = []
+      staticdata.SkillCategories[category].forEach((skill) => {
+        s.push(
+          <>
+            {skill + ': ' + skills[skill]}
+            <br></br>
+          </>
+        )
+      })
+      result.push(<><br></br>{category}<br></br><br></br>{s}</>)
+
+    })
     return (<>{result}</>)
   }
 
@@ -43,14 +36,16 @@ const CharacterStats = (props) => {
 
   return (
     <>
+
       Sex: {props.sex}<br></br>
       Race: {props.race}<br></br>
       Birthsign: {props.birthsign}<br></br>
+    
       Specialization: {props.specialization}<br></br>
-      Favoured Attributes: {props.favoredAttributes.toString()}<br></br>
-      Major Skills: {props.majorSkills.toString()}<br></br>
-      Minor Skills: {props.minorSkills.toString()}<br></br><br></br>
-      {displayCharacterSkills(skills)}
+      Favoured Attributes: {props.favoredAttributes}<br></br>
+      {/* Major Skills: {props.majorSkills.toString()}<br></br> */}
+      {/* Minor Skills: {props.minorSkills.toString()}<br></br><br></br> */}
+      {displayCharacterSkills(props.skills)}
     </>
   )
 }

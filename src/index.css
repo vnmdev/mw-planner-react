@@ -24,41 +24,41 @@ select {
   margin: 10px;
   grid-template-columns: 10% 10%;
   grid-template-areas:
-    'sex fav1 '
-    'race fav2'
-    'sign spec'
-    'maj min';
+    'Sex FavoredAttribute1'
+    'Race FavoredAttribute2'
+    'Birthsign Specialization'
+    'Major Minor';
   justify-content: start;
 }
 
-.dd-sex {
-  grid-area: sex;
+.dd-Sex {
+  grid-area: Sex;
 }
 
-.dd-race {
-  grid-area: race;
+.dd-Race {
+  grid-area: Race;
 }
 
-.dd-sign {
-  grid-area: sign;
+.dd-Birthsign {
+  grid-area: Birthsign;
 }
 
-.dd-spec {
-  grid-area: spec;
+.dd-Specialization {
+  grid-area: Specialization;
 }
 
-.dd-fav1 {
-  grid-area: fav1;
+.dd-FavoredAttribute1 {
+  grid-area: FavoredAttribute1;
 }
 
-.dd-fav2 {
-  grid-area: fav2;
+.dd-FavoredAttribute2 {
+  grid-area: FavoredAttribute2;
 }
 
-.dd-maj {
-  grid-area: maj;
+.dd-Major {
+  grid-area: Major;
 }
 
-.dd-min {
-  grid-area: min;
+.dd-Minor {
+  grid-area: Minor;
 }
