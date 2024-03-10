@@ -21,31 +21,24 @@ const CharacterStats = (props) => {
     return (<>{result}</>)
   }
 
-  const displayCharacterAttributes = (character) => {
+  const displayCharacterAttributes = (attributes) => {
     var result = []
-    for (var attribute in character.Attributes) {
+    Object.keys(staticdata.BaseCharacter.Attributes).forEach((attribute) => {
       result.push(
         <>
-          {attribute + ': ' + character.Attributes[attribute]}
+          {attribute + ': ' + attributes[attribute]}
           <br></br>
         </>
       )
-    }
+    })
     return (<>{result}</>)
   }
 
   return (
     <>
 
-      Sex: {props.sex}<br></br>
-      Race: {props.race}<br></br>
-      Birthsign: {props.birthsign}<br></br>
-    
-      Specialization: {props.specialization}<br></br>
-      Favoured Attributes: {props.favoredAttributes}<br></br>
-      {/* Major Skills: {props.majorSkills.toString()}<br></br> */}
-      {/* Minor Skills: {props.minorSkills.toString()}<br></br><br></br> */}
-      {displayCharacterSkills(props.skills)}
+      {displayCharacterSkills(props.skills)}<br></br>
+      {displayCharacterAttributes(props.attributes)}
     </>
   )
 }
