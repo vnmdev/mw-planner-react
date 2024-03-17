@@ -13,6 +13,12 @@ body {
 
 }
 
+td, tr, th {
+  padding: 0px;
+  padding-right: 50px;
+  margin: 0px;
+}
+
 h1 {
   font-size: 18pt;
 }
@@ -38,12 +44,12 @@ select {
   display: grid;
   margin: 10px;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 60%;
+  grid-template-rows: 1fr;
   grid-template-areas:
-  'Stat1 Stat2 Stat3 Stat4'
-  'Dropdown1 Dropdown2 Dropdown3 Dropdown4';
+  'Stat1 Stat2 Stat3 Stat4 Stat5'
+  'Dropdown1 Dropdown2 Dropdown3 Dropdown4 Dropdown5';
   grid-area: layout;
-  width: 1000px;
+  width: 1200px;
 }
 
 .layout-Dropdown1 {
@@ -62,6 +68,10 @@ select {
   grid-area: Dropdown4;
 }
 
+.layout-Dropdown5 {
+  grid-area: Dropdown5;
+}
+
 .layout-Stat1 {
   grid-area: Stat1;
 }
@@ -76,4 +86,8 @@ select {
 
 .layout-Stat4 {
   grid-area: Stat4;
+}
+
+.layout-Stat5 {
+  grid-area: Stat5;
 }

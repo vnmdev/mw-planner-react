@@ -149,7 +149,6 @@ const CharacterCreation = () => {
 
   function drawStartingSpells() {
     const result = []
-    /* 2 + Willpower / 5 + Luck / 10 */
     const attributeModifier = attributes['Willpower'] / 5 + attributes['Luck'] / 10
     Object.entries(staticdata.StartingSpells).forEach(([k, v]) => {
       Object.entries(v).forEach(([k2, v2]) => {
@@ -157,7 +156,10 @@ const CharacterCreation = () => {
         if (baseSpellChance > v2.requiredScore) {
           result.push(
             <>
-              {k2}: {baseSpellChance - v2.magickaCost}% success<br></br>
+              <tr>
+                <td>{k2}</td>
+                <td>{baseSpellChance - v2.magickaCost}%</td>
+              </tr>
             </>
           )
         }
@@ -165,7 +167,9 @@ const CharacterCreation = () => {
     })
 
     return (
-      <>{result}</>
+      <table>
+        {result}
+      </table>
     )
   }
 
@@ -181,6 +185,7 @@ const CharacterCreation = () => {
   return (
     <>
       <div class="layout">
+        
         <div class="Dropdown1">
           <Dropdown
             name={'Sex'}
@@ -210,7 +215,21 @@ const CharacterCreation = () => {
         <div class="Dropdown3">
           {drawMinorSkills()}
         </div>
-        <div class="Dropdown4">
+        <div class="Dropdown4"></div>
+        <div class="Dropdown5"></div>
+        <CharacterStats
+          sex={sex}
+          race={race}
+          birthsign={birthsign}
+          specialization={specialization}
+          favoredAttributes={favoredAttributes}
+          skills={skills}
+          attributes={attributes}
+          derivedAttributes={derivedAttributes}
+          majorSkills={majorSkills}
+          minorSkills={minorSkills}
+        />
+        <div class="Stat5">
           <h1>Weapon Calculator</h1>
           <Dropdown
             name={'Weapon Skill'}
@@ -226,18 +245,6 @@ const CharacterCreation = () => {
           <h1>Starting Spells</h1>
           {drawStartingSpells()}
         </div>
-        <CharacterStats
-          sex={sex}
-          race={race}
-          birthsign={birthsign}
-          specialization={specialization}
-          favoredAttributes={favoredAttributes}
-          skills={skills}
-          attributes={attributes}
-          derivedAttributes={derivedAttributes}
-          majorSkills={majorSkills}
-          minorSkills={minorSkills}
-        />
         <br></br>
       </div>
     </>

@@ -7,20 +7,20 @@ const CharacterStats = (props) => {
     var result = []
     // Object.keys(staticdata.SkillCategories).forEach((category) => {
     var s = []
+
     staticdata.SkillCategories[category].forEach((skill) => {
+      var colour = props.majorSkills.includes(skill) ? 'cyan' : props.minorSkills.includes(skill) ? 'lightblue' : ''
       var ss = [
         <>
-          {skill + ': ' + skills[skill]}
-          <br></br>
+          <tr>
+            <td><span style={{ color: colour }}>{skill}</span></td>
+            <td><span style={{ color: colour }}>{skills[skill]}</span></td>
+          </tr>
         </>
       ]
-      if (props.majorSkills.includes(skill)) {
-        s.push(<b style={{ color: "cyan" }}>{ss}</b>)
-      } else if (props.minorSkills.includes(skill)) {
-        s.push(<b style={{ color: "lightblue" }}>{ss}</b>)
-      } else {
-        s.push(<>{ss}</>)
-      }
+
+
+      s.push(<>{ss}</>)
 
     })
     result.push(
@@ -38,12 +38,16 @@ const CharacterStats = (props) => {
   const displayAttributes = (attributes) => {
     var result = []
     Object.keys(staticdata.BaseCharacter.Attributes).forEach((attribute) => {
+      var colour = attributes[attribute] > 40 ? 'green' : colour = attributes[attribute] < 40 ? 'red' : ''
       var temp = [
         <>
-          {attribute + ': ' + attributes[attribute]}
+          <tr>
+            <td><span style={{ color: colour }}>{attribute}</span></td>
+            <td><span style={{ color: colour }}>{attributes[attribute]}</span></td>
+          </tr>
         </>
       ]
-      result.push(<>{temp}<br></br></>)
+      result.push(<>{temp}</>)
     })
     return (<>{result}</>)
   }
@@ -53,8 +57,10 @@ const CharacterStats = (props) => {
     Object.keys(staticdata.DerivedAttributes).forEach((derivedAttribute) => {
       result.push(
         <>
-          {derivedAttribute + ': ' + derivedAttributes[derivedAttribute]}
-          <br></br>
+          <tr>
+            <td>{derivedAttribute}</td>
+            <td>{derivedAttributes[derivedAttribute]}</td>
+          </tr>
         </>
       )
     })
@@ -65,18 +71,26 @@ const CharacterStats = (props) => {
     <>
       <div class="Stat1">
         <h1>Attributes</h1>
-        {displayDerivedAttributes(props.derivedAttributes)}
-        <br></br>
-        {displayAttributes(props.attributes)}
+        <table>
+          {displayDerivedAttributes(props.derivedAttributes)}
+          <br></br>
+          {displayAttributes(props.attributes)}
+        </table>
       </div>
       <div class="Stat2">
-        {displaySkills(props.skills, 'Combat')}
+        <table>
+          {displaySkills(props.skills, 'Combat')}
+        </table>
       </div>
       <div class="Stat3">
-        {displaySkills(props.skills, 'Magic')}
+        <table>
+          {displaySkills(props.skills, 'Magic')}
+        </table>
       </div>
       <div class="Stat4">
-        {displaySkills(props.skills, 'Stealth')}
+        <table>
+          {displaySkills(props.skills, 'Stealth')}
+        </table>
       </div>
     </>
   )
