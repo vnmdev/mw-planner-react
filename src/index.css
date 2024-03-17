@@ -1,84 +1,80 @@
 body {
-  background-color: white;
-  color: black;
+  /* background-color: #1D1E22; */
+  background-image: url("../public/20240317044323_1.jpg");
+  color: #CAA560;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  font-size: 10pt;
+  font-size: 12pt;
   font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  align-content: center;
+}
 
+h1 {
+  font-size: 18pt;
+}
+
+div#root {
+  text-align: -webkit-center;
+  align-content: center;
 }
 
 select {
-  width: 150px;
+  width: 200px;
   margin-top: 5px;
   margin-bottom: 5px;
+  background-color: #1D1E22;
+  color: #CAA560;
+  font-size: 16pt;
 }
 
-.stats {
-  float:right;
-}
-
-.dd {
-  background-color: white;
+.layout {
+  align-content: center;
+  padding: 25px;
+  text-align: left;
+  background-color: #1d1e22a6;
   display: grid;
   margin: 10px;
-  grid-template-columns: 10% 10%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 60%;
   grid-template-areas:
-    'Sex FavoredAttribute1 Stats1'
-    'Race FavoredAttribute2 Stats2'
-    'Birthsign Specialization Stats3'
-    'Major Minor Stats4';
-  justify-content: start;
+    'Stat1 Stat2 Stat3 Stat4'
+    'Dropdown1 Dropdown2 Dropdown3 Dropdown4';
+  grid-area: layout;
+  width: 1000px;
 }
 
-.dd-Sex {
-  grid-area: Sex;
+.layout-Dropdown1 {
+  grid-area: Dropdown1;
 }
 
-.dd-Race {
-  grid-area: Race;
+.layout-Dropdown2 {
+  grid-area: Dropdown2;
 }
 
-.dd-Birthsign {
-  grid-area: Birthsign;
+.layout-Dropdown3 {
+  grid-area: Dropdown3;
 }
 
-.dd-Specialization {
-  grid-area: Specialization;
+.layout-Dropdown4 {
+  grid-area: Dropdown4;
 }
 
-.dd-FavoredAttribute1 {
-  grid-area: FavoredAttribute1;
+.layout-Stat1 {
+  grid-area: Stat1;
 }
 
-.dd-FavoredAttribute2 {
-  grid-area: FavoredAttribute2;
+.layout-Stat2 {
+  grid-area: Stat2;
 }
 
-.dd-Major {
-  grid-area: Major;
+.layout-Stat3 {
+  grid-area: Stat3;
 }
 
-.dd-Minor {
-  grid-area: Minor;
-}
-
-.dd-Stats1 {
-  grid-area: Stats1;
-}
-
-.dd-Stats2 {
-  grid-area: Stats2;
-}
-
-.dd-Stats3 {
-  grid-area: Stats3;
-}
-
-.dd-Stats4 {
-  grid-area: Stats4;
+.layout-Stat4 {
+  grid-area: Stat4;
 }

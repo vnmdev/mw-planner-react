@@ -3,40 +3,47 @@ import staticdata from '../../data/static_data.json'
 
 const CharacterStats = (props) => {
 
-  const displaySkills = (skills) => {
+  const displaySkills = (skills, category) => {
     var result = []
-    Object.keys(staticdata.SkillCategories).forEach((category) => {
-      var s = []
-      staticdata.SkillCategories[category].forEach((skill) => {
-        s.push(
-          <>
-            {skill + ': ' + skills[skill]}
-            <br></br>
-          </>
-        )
-      })
-      result.push(
+    // Object.keys(staticdata.SkillCategories).forEach((category) => {
+    var s = []
+    staticdata.SkillCategories[category].forEach((skill) => {
+      var ss = [
         <>
+          {skill + ': ' + skills[skill]}
           <br></br>
-          <b>{category}</b>
-          <br></br>
-          {s}
         </>
-      )
+      ]
+      if (props.majorSkills.includes(skill)) {
+        s.push(<b style={{ color: "cyan" }}>{ss}</b>)
+      } else if (props.minorSkills.includes(skill)) {
+        s.push(<b style={{ color: "lightblue" }}>{ss}</b>)
+      } else {
+        s.push(<>{ss}</>)
+      }
 
     })
+    result.push(
+      <>
+        <h1>{category}</h1>
+        {s}
+        <br></br>
+      </>
+    )
+
+    // })
     return (<>{result}</>)
   }
 
   const displayAttributes = (attributes) => {
     var result = []
     Object.keys(staticdata.BaseCharacter.Attributes).forEach((attribute) => {
-      result.push(
+      var temp = [
         <>
           {attribute + ': ' + attributes[attribute]}
-          <br></br>
         </>
-      )
+      ]
+      result.push(<>{temp}<br></br></>)
     })
     return (<>{result}</>)
   }
@@ -56,10 +63,20 @@ const CharacterStats = (props) => {
 
   return (
     <>
-      <div class="dd-Stats4">
-        {displaySkills(props.skills)}<br></br>
-        {displayAttributes(props.attributes)}<br></br>
+      <div class="Stat1">
+        <h1>Attributes</h1>
         {displayDerivedAttributes(props.derivedAttributes)}
+        <br></br>
+        {displayAttributes(props.attributes)}
+      </div>
+      <div class="Stat2">
+        {displaySkills(props.skills, 'Combat')}
+      </div>
+      <div class="Stat3">
+        {displaySkills(props.skills, 'Magic')}
+      </div>
+      <div class="Stat4">
+        {displaySkills(props.skills, 'Stealth')}
       </div>
     </>
   )
