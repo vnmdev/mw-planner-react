@@ -13,19 +13,21 @@ const Dropdown = (props) => {
     return props.onChange(e)
   }
 
-  const dropdownGenerator = (name, object, skillCategories = null) => {
+  const dropdownGenerator = (name, item, categories = null) => {
+    console.log(categories)
     const dropdown = [<option value=""></option>]
-
-    if (!skillCategories) {
-      object = Array.isArray(object) ? object : Object.keys(object)
-      object.forEach((o1) => {
-        dropdown.push(<option value={o1}>{o1}</option>)
+    if (!categories) {
+      item = Array.isArray(item) ? item : Object.keys(item)
+      item.forEach((x) => {
+        dropdown.push(<option value={x}>{x}</option>)
       })
     } else {
-      Object.keys(skillCategories).forEach((category) => {
+      Object.keys(categories).forEach((category) => {
         var s = []
-        skillCategories[category].forEach(skill => {
-          s.push(<option value={skill}>{skill}</option>)
+        categories[category] = Array.isArray(categories[category]) ? categories[category] : Object.keys(categories[category])
+        console.log(categories)
+        categories[category].forEach(x => {
+          s.push(<option value={x}>{x}</option>)
         })
         dropdown.push(<optgroup label={category}>{s}</optgroup>)
       })
@@ -44,7 +46,7 @@ const Dropdown = (props) => {
 
   return (
     <>
-      {dropdownGenerator(props.name, props.values, props.skillCategories)}
+      {dropdownGenerator(props.name, props.values, props.categories)}
     </>
   )
 }

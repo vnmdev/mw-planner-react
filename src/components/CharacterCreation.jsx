@@ -21,6 +21,7 @@ const CharacterCreation = () => {
   const [attributes, setAttributes] = useState(staticdata.BaseCharacter.Attributes)
   const [derivedAttributes, setDerivedAttributes] = useState(staticdata.DerivedAttributes)
   //Weapon
+  const [weaponSkill, setWeaponSkill] = useState('')
   const [weapon, setWeapon] = useState('')
 
   useEffect(() => {
@@ -89,38 +90,41 @@ const CharacterCreation = () => {
     setArray(array.map((c, i) => { return i === index ? value : c }));
   }
 
-  function drawMinorAttributes() {
+  function drawMinorSkills() {
     const ddminor = []
     Array.from(Array(5).keys()).forEach((i) => {
       ddminor.push(
         <Dropdown
-          name={'MinorSkill' + (i + 1)}
-          values={staticdata.BaseCharacter.Skills}
+          name={i == 0 ? 'Minor Skills' : ''}
+          categories={staticdata.SkillCategories}
           mutuallyExclusive={[majorSkills, minorSkills]}
           onChange={(e) => updateArray(minorSkills, setMinorSkills, e.target.value, i)}
         />
       )
     })
     return (
-      <>{ddminor}</>
+      <>
+        {ddminor}
+      </>
     )
   }
 
-  function drawMajorAttributes() {
+  function drawMajorSkills() {
     const ddmajor = []
     Array.from(Array(5).keys()).forEach((i) => {
       ddmajor.push(
         <Dropdown
-          name={'MajorSkill' + (i + 1)}
-          values={staticdata.BaseCharacter.Skills}
-          skillCategories={staticdata.BaseCharacter.SkillCategories}
+          name={i == 0 ? 'Major Skills' : ''}
+          categories={staticdata.SkillCategories}
           mutuallyExclusive={[majorSkills, minorSkills]}
           onChange={(e) => updateArray(majorSkills, setMajorSkills, e.target.value, i)}
         />
       )
     })
     return (
-      <>{ddmajor}</>
+      <>
+        {ddmajor}
+      </>
     )
   }
 
@@ -129,7 +133,7 @@ const CharacterCreation = () => {
     Array.from(Array(2).keys()).forEach((i) => {
       ddattributes.push(
         <Dropdown
-          name={'FavoredAttribute' + (i + 1)}
+          name={i == 0 ? 'Favored Attributes' : ''}
           values={staticdata.BaseCharacter.Attributes}
           mutuallyExclusive={[favoredAttributes]}
           onChange={(e) => updateArray(favoredAttributes, setFavoredAttributes, e.target.value, i)}
@@ -137,7 +141,9 @@ const CharacterCreation = () => {
       )
     })
     return (
-      <>{ddattributes}</>
+      <>
+        {ddattributes}
+      </>
     )
   }
 
@@ -151,7 +157,7 @@ const CharacterCreation = () => {
         if (baseSpellChance > v2.requiredScore) {
           result.push(
             <>
-              {k2}: {baseSpellChance - v2.magickaCost}%<br></br>
+              {k2}: {baseSpellChance - v2.magickaCost}% success<br></br>
             </>
           )
         }
@@ -161,6 +167,15 @@ const CharacterCreation = () => {
     return (
       <>{result}</>
     )
+  }
+
+  function drawWeaponSandbox() {
+    if (weapon == '' || weaponSkill == '') return
+    return (<>
+      Chance to hit: {((skills[weaponSkill] + (weapon.includes('Bound') ? 10 : 0)) + attributes['Agility'] / 5 + attributes['Luck'] / 10) * 1 + (birthsign == 'The Warrior' ? 10 : 0)}<br></br>
+      Damage per hit: {weapon == '' ? '' : staticdata.Weapons[weaponSkill][weapon].maxDamage * (attributes['Strength'] + 50) / 100}<br></br><br></br>
+    </>)
+
   }
 
   return (
@@ -183,27 +198,33 @@ const CharacterCreation = () => {
             onChange={(e) => setBirthsign(e.target.value)}
           />
           <Dropdown
-            name={'Weapon'}
-            values={staticdata.Weapons.Axe["1-Handed"]}
-            onChange={(e) => setWeapon(e.target.value)}
-          />
-          Chance to hit: {((skills['Axe'] + (weapon.includes('Bound') ? 10 : 0)) + attributes['Agility'] / 5 + attributes['Luck'] / 10) * 1 + (birthsign == 'The Warrior' ? 10 : 0)}<br></br>
-          Damage per hit: {weapon == '' ? '' : staticdata.Weapons.Axe["1-Handed"][weapon].maxDamage * (attributes['Strength'] + 50) / 100}<br></br><br></br>
-          {drawStartingSpells()}
-        </div>
-        <div class="Dropdown2">
-          <Dropdown
             name={'Specialization'}
             values={staticdata.SkillCategories}
             onChange={(e) => setSpecialization(e.target.value)}
           />
           {drawFavoredAttributes()}
         </div>
+        <div class="Dropdown2">
+          {drawMajorSkills()}
+        </div>
         <div class="Dropdown3">
-          {drawMajorAttributes()}
+          {drawMinorSkills()}
         </div>
         <div class="Dropdown4">
-          {drawMinorAttributes()}
+          <h1>Weapon Calculator</h1>
+          <Dropdown
+            name={'Weapon Skill'}
+            values={staticdata.Weapons}
+            onChange={(e) => setWeaponSkill(e.target.value)}
+          />
+          <Dropdown
+            name={'Weapon'}
+            categories={staticdata.WeaponCategories[weaponSkill] || ['']}
+            onChange={(e) => setWeapon(e.target.value)}
+          />
+          {drawWeaponSandbox()}
+          <h1>Starting Spells</h1>
+          {drawStartingSpells()}
         </div>
         <CharacterStats
           sex={sex}
@@ -218,7 +239,6 @@ const CharacterCreation = () => {
           minorSkills={minorSkills}
         />
         <br></br>
-        
       </div>
     </>
   )

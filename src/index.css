@@ -10,14 +10,13 @@ body {
   font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  align-content: center;
+
 }
 
 h1 {
   font-size: 18pt;
 }
-
-div#root {
+div#root{
   text-align: -webkit-center;
   align-content: center;
 }
@@ -32,8 +31,8 @@ select {
 }
 
 .layout {
-  align-content: center;
-  padding: 25px;
+  padding: 30px;
+  padding-bottom: 100px;
   text-align: left;
   background-color: #1d1e22a6;
   display: grid;
@@ -41,8 +40,8 @@ select {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 60%;
   grid-template-areas:
-    'Stat1 Stat2 Stat3 Stat4'
-    'Dropdown1 Dropdown2 Dropdown3 Dropdown4';
+  'Stat1 Stat2 Stat3 Stat4'
+  'Dropdown1 Dropdown2 Dropdown3 Dropdown4';
   grid-area: layout;
   width: 1000px;
 }

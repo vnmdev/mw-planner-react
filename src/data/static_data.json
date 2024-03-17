@@ -885,59 +885,76 @@
       }
     }
   },
+  "WeaponCategories": {
+    "Axe": {
+      "1-Handed": [
+        "Chitin War Axe",
+        "Iron War Axe",
+        "Steel Axe",
+        "Steel War Axe",
+        "Silver War Axe",
+        "Dwarven War Axe",
+        "Glass War Axe",
+        "Ebony War Axe",
+        "Daedric War Axe"
+      ],
+      "2-Handed": [
+        "Bound Battle Axe"
+      ]
+
+    }
+  },
   "Weapons": {
     "Axe": {
-      "1-Handed": {
-        "Chitin War Axe": {
-          "durability": 640,
-          "maxDamage": 11,
-          "speed": 1.25
-        },
-        "Iron War Axe": {
-          "durability": 800,
-          "maxDamage": 18,
-          "speed": 1.25
-        },
-        "Steel Axe": {
-          "durability": 1200,
-          "maxDamage": 18,
-          "speed": 1
-        },
-        "Steel War Axe": {
-          "durability": 1200,
-          "maxDamage": 20,
-          "speed": 1.25
-        },
-        "Silver War Axe": {
-          "durability": 720,
-          "maxDamage": 20,
-          "speed": 1.25
-        },
-        "Dwarven War Axe": {
-          "durability": 2000,
-          "maxDamage": 24,
-          "speed": 1.25
-        },
-        "Glass War Axe": {
-          "durability": 640,
-          "maxDamage": 33,
-          "speed": 1.25
-        },
-        "Ebony War Axe": {
-          "durability": 2400,
-          "maxDamage": 37,
-          "speed": 1.25
-        },
-        "Daedric War Axe": {
-          "durability": 3200,
-          "maxDamage": 44,
-          "speed": 1.25
-        },
-        "Bound Battle Axe": {
-          "durability": 4800,
-          "maxDamage": 80,
-          "speed": 1
-        }
+      "Chitin War Axe": {
+        "durability": 640,
+        "maxDamage": 11,
+        "speed": 1.25
+      },
+      "Iron War Axe": {
+        "durability": 800,
+        "maxDamage": 18,
+        "speed": 1.25
+      },
+      "Steel Axe": {
+        "durability": 1200,
+        "maxDamage": 18,
+        "speed": 1
+      },
+      "Steel War Axe": {
+        "durability": 1200,
+        "maxDamage": 20,
+        "speed": 1.25
+      },
+      "Silver War Axe": {
+        "durability": 720,
+        "maxDamage": 20,
+        "speed": 1.25
+      },
+      "Dwarven War Axe": {
+        "durability": 2000,
+        "maxDamage": 24,
+        "speed": 1.25
+      },
+      "Glass War Axe": {
+        "durability": 640,
+        "maxDamage": 33,
+        "speed": 1.25
+      },
+      "Ebony War Axe": {
+        "durability": 2400,
+        "maxDamage": 37,
+        "speed": 1.25
+      },
+      "Daedric War Axe": {
+        "durability": 3200,
+        "maxDamage": 44,
+        "speed": 1.25
+      },
+      "Bound Battle Axe": {
+        "durability": 4800,
+        "maxDamage": 80,
+        "speed": 1
       }
     }
   }
